@@ -2,7 +2,7 @@
 
 GameCharacter::GameCharacter() {
 	name = "Miner";
-	tool = new string[3]{ "pickaxe", "shovel" , "bow" };
+	tools = new string[3]{ "pickaxe", "shovel" , "bow" };
 	cout << "The default constructor is called" << endl;
 }
 
@@ -14,13 +14,10 @@ GameCharacter::GameCharacter(GameCharacter& g) {
 
 	cout << "The copy constructor is called" << endl;
 
-	name = new string;
-	strcpy(name, (g.name));
-
-	tool = new string[3];
-	// Copy tools from the source object
+	this->name = g.name;
+	this->tools = new string[3];
 	for (int i = 0; i < 3; ++i) {
-		tool[i] = g.tool[i];
+		this->tools[i] = g.tools[i];
 	}
 }
 
@@ -29,9 +26,14 @@ GameCharacter& GameCharacter::operator=(GameCharacter& rhs) {
 	cout << "The assignment operator is called" << endl;
 
 	if (this != &rhs) {
-		strcpy(*name , *(rhs.name));
-
+		this->name= rhs.name;
+		this->tools = new string[3];
+		for (int i = 0; i < 3; ++i) {
+			this->tools[i] = rhs.tools[i];
+		}
 	}
+
+	return *this;
 }
 
 GameCharacter GameCharacter::foo1(GameCharacter p) {
@@ -56,6 +58,5 @@ GameCharacter& GameCharacter::foo5(const GameCharacter& p) {
 }
 
 GameCharacter::~GameCharacter() {
-	delete name;
 	delete[] tools;
 }

@@ -7,7 +7,7 @@ using namespace std;
 class GameCharacter
 {
 	string name;
-	string* tool;
+	string* tools;
 
 public:
 
