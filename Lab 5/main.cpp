@@ -1,4 +1,5 @@
-//Lab 05 - Henil, Tyler
+
+//Lab 05 - Tyler, Henil
 #include "GameCharacter.h"
 using namespace std;
 
