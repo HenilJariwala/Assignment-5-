@@ -39,19 +39,19 @@ GameCharacter& GameCharacter::operator=(GameCharacter& rhs) {
 }
 
 GameCharacter foo1(GameCharacter p) {
-	return p;
+	return p; //This function calls the copy constructor because it take GameCharacter class as parameter
 }
 GameCharacter& foo2(GameCharacter& p) {
-	return p;
+	return p; //This function calls the copy constructor because it take GameCharacter class as parameter
 }
 GameCharacter foo3(GameCharacter& p) {
-	return p;
+	return p; //This function calls the copy constructor because it take GameCharacter class as parameter
 }
 GameCharacter& foo4(GameCharacter p) {
-	return p;
+	return p; //This function calls the copy constructor because it take GameCharacter class as parameter
 }
 GameCharacter& foo5(const GameCharacter& p) {
-	GameCharacter gc;
+	GameCharacter gc; //This function calls the default constructor because it creates new GameCharacter class
 	return gc;
 }
 
